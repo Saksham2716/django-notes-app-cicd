@@ -1,0 +1,41 @@
+pipeline{
+    agent any
+    
+    stages{
+        stage("code clone")
+        {
+            steps{
+            echo "cloning the code from github repo"
+            git url: "https://github.com/Saksham2716/word-frequency-app-cicd.git", branch: "main"
+            }
+        }
+        
+         stage("Build")
+        {
+            steps{
+            echo "Building Docker Image"
+            sh "docker build -t wordies-app ."
+            }
+        }
+        
+         stage("Push Docker image")
+        {
+            steps{
+            echo "Pushing the docker image to docker hub"
+            withCredentials([usernamePassword(credentialsId: "dockerhub", passwordVariable: "dockerhubPass", usernameVariable: "dockerhubUser")]){
+                sh "docker tag wordies-app ${env.dockerhubUser}/wordies-app:latest"
+                sh "docker login -u ${env.dockerhubUser} -p ${env.dockerhubPass}"
+                sh "docker push ${env.dockerhubUser}/wordies-app:latest"
+            }
+            }
+        }
+        
+         stage("Deploy")
+        {
+            steps{
+            echo "deploying the docker image"
+            sh "docker-compose down && docker-compose up -d"
+            }
+        }
+    }
+}
