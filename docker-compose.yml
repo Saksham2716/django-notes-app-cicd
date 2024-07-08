@@ -6,5 +6,5 @@ services:
       - "80:80"
     volumes:
       - ./index.html:/usr/share/nginx/html/index.html
-      - ./styles.css:/usr/share/nginx/html/styles.css
-      - ./script.js:/usr/share/nginx/html/script.js
+      - ./main.css:/usr/share/nginx/html/main.css
+      - ./app.js:/usr/share/nginx/html/app.js
