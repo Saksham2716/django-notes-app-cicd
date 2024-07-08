@@ -1,1 +1,1 @@
-# django-notes-app-cicd
+# word-frequency-app-cicd
