@@ -3,7 +3,7 @@ services:
   web:
     image: saksham02/wordies-app
     ports:
-      - "80:80"
+      - "8000:8000"
     volumes:
       - ./index.html:/usr/share/nginx/html/index.html
       - ./main.css:/usr/share/nginx/html/main.css
