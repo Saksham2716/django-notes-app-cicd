@@ -1,0 +1,17 @@
+# Exclude development files and directories
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Exclude build artifacts
+*.log
+*.map
+*.min.js
+*.min.css
+
+# Exclude temporary files
+.DS_Store
+.vscode/
+
+# Exclude any other files or directories specific to your project
