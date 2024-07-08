@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: nginx:alpine
+    image: saksham02/wordies-app
     ports:
       - "80:80"
     volumes:
