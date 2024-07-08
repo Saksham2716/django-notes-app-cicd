@@ -15,3 +15,6 @@ yarn-error.log
 .vscode/
 
 # Exclude any other files or directories specific to your project
+
+# Ensure styles.css is not excluded
+!styles.css
