@@ -5,6 +5,7 @@ FROM nginx:alpine
 COPY index.html /usr/share/nginx/html/
 COPY main.css /usr/share/nginx/html/
 COPY app.js /usr/share/nginx/html/
+COPY default.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 8000 (default Nginx port)
 EXPOSE 8000
