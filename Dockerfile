@@ -6,7 +6,7 @@ COPY index.html /usr/share/nginx/html/
 COPY main.css /usr/share/nginx/html/
 COPY app.js /usr/share/nginx/html/
 
-# Expose port 80 (default Nginx port)
+# Expose port 8000 (default Nginx port)
 EXPOSE 8000
 
 # Start Nginx server
