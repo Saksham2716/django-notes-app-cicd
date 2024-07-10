@@ -8,3 +8,4 @@ services:
       - ./index.html:/usr/share/nginx/html/index.html
       - ./main.css:/usr/share/nginx/html/main.css
       - ./app.js:/usr/share/nginx/html/app.js
+      - ./default.conf:/etc/nginx/conf.d/default.conf
